@@ -29,7 +29,7 @@ class HeatConsumer(ClientNode):
 if __name__ == "__main__":
 
     heat_cons = HeatConsumer(host='localhost',
-                             name='HeatConsumer',
+                             name='ConsumerHeating',
                              output_attributes=["p_heating"])
 
     print('Start heating consumer node')
