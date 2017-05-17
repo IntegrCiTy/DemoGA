@@ -1,0 +1,4 @@
+{
+  "schedule": [ ["HeatPumpCooling", "HeatPumpHeating", "HeatPumpCentral"], ["ThermalNetwork", "PowerNetwork"], ["ConsumerHeating", "ConsumerCooling"] ],
+  "steps": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+}

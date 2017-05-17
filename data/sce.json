@@ -1,0 +1,144 @@
+{
+  "nodes": {
+    "HeatPumpCentral": {
+      "inputs": ["t_in_hot"],
+      "outputs": ["t_out_hot", "p_elec"]
+    },
+    "HeatPumpCooling": {
+      "inputs": ["t_in_hot", "p_cool"],
+      "outputs": ["t_out_hot", "p_elec"]
+    },
+    "HeatPumpHeating": {
+      "inputs": ["t_in_cold", "p_heat"],
+      "outputs": ["t_out_cold", "p_elec"]
+    },
+    "ThermalNetwork": {
+      "inputs": ["t_sup", "t_ret_cool", "t_ret_heat"],
+      "outputs": ["t_ret", "t_sup_cool", "t_sup_heat"]
+    },
+    "PowerNetwork": {
+      "inputs": ["p_elec_hp_central", "p_elec_hp_cooling", "p_elec_hp_heating"],
+      "outputs": []
+    },
+    "ConsumerHeating": {
+      "inputs": [],
+      "outputs": ["p_heating"]
+    },
+    "ConsumerCooling": {
+      "inputs": [],
+      "outputs": ["p_cooling"]
+    }
+  },
+  "links": {
+    "l0C": {
+      "out": {
+        "node":"ConsumerCooling",
+        "attr": "p_cooling"
+      },
+      "in": {
+        "node":"HeatPumpCooling",
+        "attr": "p_cool"
+      }
+    },
+    "l0H": {
+      "out": {
+        "node":"ConsumerHeating",
+        "attr": "p_heating"
+      },
+      "in": {
+        "node":"HeatPumpHeating",
+        "attr": "p_heat"
+      }
+    },
+    "l1": {
+      "out": {
+        "node":"HeatPumpCentral",
+        "attr": "t_out_hot"
+      },
+      "in": {
+        "node":"ThermalNetwork",
+        "attr": "t_sup"
+      }
+    },
+    "l2": {
+      "out": {
+        "node": "ThermalNetwork",
+        "attr": "t_ret"
+      },
+      "in": {
+        "node": "HeatPumpCentral",
+        "attr": "t_in_hot"
+      }
+    },
+    "l3": {
+      "out": {
+        "node":"HeatPumpCooling",
+        "attr": "t_out_hot"
+      },
+      "in": {
+        "node":"ThermalNetwork",
+        "attr": "t_ret_cool"
+      }
+    },
+    "l4": {
+      "out": {
+        "node":"ThermalNetwork",
+        "attr": "t_sup_cool"
+      },
+      "in": {
+        "node":"HeatPumpCooling",
+        "attr": "t_in_hot"
+      }
+    },
+    "l5": {
+      "out": {
+        "node":"HeatPumpHeating",
+        "attr": "t_out_cold"
+      },
+      "in": {
+        "node":"ThermalNetwork",
+        "attr": "t_ret_heat"
+      }
+    },
+    "l6": {
+      "out": {
+        "node":"ThermalNetwork",
+        "attr": "t_sup_heat"
+      },
+      "in": {
+        "node":"HeatPumpHeating",
+        "attr": "t_in_cold"
+      }
+    },
+    "l7": {
+      "out": {
+        "node":"HeatPumpCentral",
+        "attr": "p_elec"
+      },
+      "in": {
+        "node":"PowerNetwork",
+        "attr": "p_elec_hp_central"
+      }
+    },
+    "l8": {
+      "out": {
+        "node":"HeatPumpCooling",
+        "attr": "p_elec"
+      },
+      "in": {
+        "node":"PowerNetwork",
+        "attr": "p_elec_hp_cooling"
+      }
+    },
+    "l9": {
+      "out": {
+        "node":"HeatPumpHeating",
+        "attr": "p_elec"
+      },
+      "in": {
+        "node":"PowerNetwork",
+        "attr": "p_elec_hp_heating"
+      }
+    }
+  }
+}
