@@ -25,9 +25,10 @@ class NodeFMU(ClientNode):
         print(self.name, 'current_time', current_time)
         print(self.name, 'inputs', self.input_values)
 
-        # Set input values to FMU
+        # Set input values to FMU + send IN values to redis (/!\ at time values)
         for o, value in self.input_values.items():
             self.model.set(self.map_attr[o], value)
+            self.redis.rpush('IN_' + self.name + o, value)
 
         opts = self.model.simulate_options()
         opts['initialize'] = False
@@ -38,8 +39,9 @@ class NodeFMU(ClientNode):
 
         # TODO: store simulation results
 
-        # Send update for all output attributes
+        # Send update for all output attributes + send OUT values to redis
         for o in self.output_attributes:
             print(self.name, o, ':', res[self.map_attr[o]][-1])
             self.update_attribute(o, res[self.map_attr[o]][-1])
+            self.redis.rpush('OUT_' + self.name + o, *res[self.map_attr[o]])
         print('=============')
