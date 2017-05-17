@@ -29,7 +29,7 @@ class CoolConsumer(ClientNode):
 if __name__ == "__main__":
 
     cool_cons = CoolConsumer(host='localhost',
-                             name='CoolConsumer',
+                             name='ConsumerCooling',
                              output_attributes=["p_cooling"])
 
     print('Start cooling consumer node')
