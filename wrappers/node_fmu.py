@@ -37,7 +37,7 @@ class NodeFMU(ClientNode):
         # Run simulation step
         res = self.model.simulate(start_time=current_time - time_step, final_time=current_time, options=opts)
 
-        # TODO: store simulation results
+        # TODO: store intern state simulation results
 
         # Send update for all output attributes + send OUT values to redis
         for o in self.output_attributes:
