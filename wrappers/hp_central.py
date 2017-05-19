@@ -1,7 +1,7 @@
 import sys
 from common.node_fmu import NodeFMU
 
-fmu_models_folder = '../models_FMU/'
+fmu_models_folder = 'DemoGA/models_FMU/'
 fmu_file = 'hpCentral.fmu'
 
 map_attr = {
