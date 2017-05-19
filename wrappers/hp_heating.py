@@ -1,4 +1,4 @@
-from DemoGA.wrappers.node_fmu import NodeFMU
+from wrappers.node_fmu import NodeFMU
 
 fmu_models_folder = '../models_FMU/'
 fmu_file = 'DHS_csBlocks_hpConsumerHot.fmu'
