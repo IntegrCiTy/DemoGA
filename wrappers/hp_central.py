@@ -1,7 +1,7 @@
 import sys
 from common.node_fmu import NodeFMU
 
-fmu_models_folder = '../models_FMU/'
+fmu_models_folder = '../../models_FMU/'
 fmu_file = 'DHS_csBlocks_hpCentral.fmu'
 
 map_attr = {
