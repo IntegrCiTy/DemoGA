@@ -1,3 +1,4 @@
+import sys
 import pyfmi
 import redis
 from obnl.client import ClientNode
@@ -28,7 +29,7 @@ class CoolConsumer(ClientNode):
 
 if __name__ == "__main__":
 
-    cool_cons = CoolConsumer(host='localhost',
+    cool_cons = CoolConsumer(host=sys.argv[1],
                              name='ConsumerCooling',
                              output_attributes=["p_cooling"])
 

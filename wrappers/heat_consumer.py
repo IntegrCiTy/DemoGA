@@ -1,3 +1,4 @@
+import sys
 import pyfmi
 import redis
 from obnl.client import ClientNode
@@ -28,7 +29,7 @@ class HeatConsumer(ClientNode):
 
 if __name__ == "__main__":
 
-    heat_cons = HeatConsumer(host='localhost',
+    heat_cons = HeatConsumer(host=sys.argv[1],
                              name='ConsumerHeating',
                              output_attributes=["p_heating"])
 

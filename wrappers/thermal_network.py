@@ -1,3 +1,4 @@
+import sys
 from common.node_fmu import NodeFMU
 
 fmu_models_folder = '../models_FMU/'
@@ -17,7 +18,7 @@ output_attr = ['t_ret', 't_sup_cool', 't_sup_heat']
 
 if __name__ == "__main__":
 
-    net = NodeFMU(host='localhost',
+    net = NodeFMU(host=sys.argv[1],
                   name='ThermalNetwork',
                   fmu=fmu_models_folder + fmu_file,
                   map_attr=map_attr,

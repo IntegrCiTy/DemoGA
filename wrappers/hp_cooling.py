@@ -1,3 +1,4 @@
+import sys
 from common.node_fmu import NodeFMU
 
 fmu_models_folder = '../models_FMU/'
@@ -18,7 +19,7 @@ output_attr = ['t_out_cold', 't_out_hot', 'p_elec']
 
 if __name__ == "__main__":
 
-    hp_cool = NodeFMU(host='localhost',
+    hp_cool = NodeFMU(host=sys.argv[1],
                       name='HeatPumpCooling',
                       fmu=fmu_models_folder + fmu_file,
                       map_attr=map_attr,
