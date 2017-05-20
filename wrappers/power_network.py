@@ -23,15 +23,6 @@ class PowerNetwork(ClientNode):
         self.redis.rpush('OUT_' + self.name + '_' + 'p_elec_tot', p)
         self.redis.rpush('OUT_' + self.name + '_' + 'p_elec_tot' + '_time', current_time)
 
-        # TODO: store simulation results
-
-        # Send update for all output attributes
-        for o in self.output_attributes:
-            v = np.random.normal(100, 10)
-            print(self.name, o, ':', v)
-            self.update_attribute(o, v)
-            self.redis.rpush('OUT_' + self.name + '_' + o, v)
-            self.redis.rpush('OUT_' + self.name + '_' + o + '_time', current_time)
         print('=============')
 
 
