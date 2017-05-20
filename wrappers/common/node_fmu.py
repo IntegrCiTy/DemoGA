@@ -38,6 +38,7 @@ class NodeFMU(ClientNode):
         opts = self.model.simulate_options()
         opts['initialize'] = False
         opts['result_handling'] = "memory"
+        opts['CVode_options']['verbosity'] = 50 # No output
 
         # Run simulation step
         res = self.model.simulate(start_time=current_time - time_step, final_time=current_time, options=opts)
