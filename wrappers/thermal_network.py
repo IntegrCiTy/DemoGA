@@ -1,8 +1,8 @@
 import sys
 from common.node_fmu import NodeFMU
 
-fmu_models_folder = '../models_FMU/'
-fmu_file = 'DHS_csBlocks_threeDoublePipesNode.fmu'
+fmu_models_folder = 'DemoGA/models_FMU/'
+fmu_file = 'threeDoublePipesNode.fmu'
 
 map_attr = {
     't_sup': 'T0_in',

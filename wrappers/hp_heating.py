@@ -1,8 +1,8 @@
 import sys
 from common.node_fmu import NodeFMU
 
-fmu_models_folder = '../models_FMU/'
-fmu_file = 'DHS_csBlocks_hpConsumerHot.fmu'
+fmu_models_folder = 'DemoGA/models_FMU/'
+fmu_file = 'hpConsumerHot.fmu'
 
 map_attr = {
     't_in_cold': 'Tin_cold',
