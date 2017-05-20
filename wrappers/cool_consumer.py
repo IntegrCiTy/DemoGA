@@ -9,7 +9,7 @@ class CoolConsumer(ClientNode):
     def __init__(self, host, name, input_attributes=None, output_attributes=None, is_first=False):
         super(CoolConsumer, self).__init__(host, name, input_attributes, output_attributes, is_first)
 
-        self.redis = redis.StrictRedis(host='localhost', port=6379, db=0)
+        self.redis = redis.StrictRedis(host=host, port=6379, db=0)
 
     def step(self, current_time, time_step):
         print('----- ' + self.name + ' -----')
@@ -24,6 +24,8 @@ class CoolConsumer(ClientNode):
             v = np.random.normal(100, 10)
             print(self.name, o, ':', v)
             self.update_attribute(o, v)
+            self.redis.rpush('OUT_' + self.name + '_' + o, v)
+            self.redis.rpush('OUT_' + self.name + '_' + o + '_time', current_time)
         print('=============')
 
 

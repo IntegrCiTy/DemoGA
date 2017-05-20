@@ -9,7 +9,7 @@ class PowerNetwork(ClientNode):
     def __init__(self, host, name, input_attributes=None, output_attributes=None, is_first=False):
         super(PowerNetwork, self).__init__(host, name, input_attributes, output_attributes, is_first)
 
-        self.redis = redis.StrictRedis(host='localhost', port=6379, db=0)
+        self.redis = redis.StrictRedis(host=host, port=6379, db=0)
 
     def step(self, current_time, time_step):
         print('----- ' + self.name + ' -----')
@@ -17,7 +17,11 @@ class PowerNetwork(ClientNode):
         print(self.name, 'current_time', current_time)
         print(self.name, 'inputs', self.input_values)
 
-        print(self.name, 'p elec tot', sum(self.input_values.values()))
+        p = sum(self.input_values.values())
+
+        print(self.name, 'p elec tot', p)
+        self.redis.rpush('OUT_' + self.name + '_' + 'p_elec_tot', p)
+        self.redis.rpush('OUT_' + self.name + '_' + 'p_elec_tot' + '_time', current_time)
 
         # TODO: store simulation results
 
@@ -26,6 +30,8 @@ class PowerNetwork(ClientNode):
             v = np.random.normal(100, 10)
             print(self.name, o, ':', v)
             self.update_attribute(o, v)
+            self.redis.rpush('OUT_' + self.name + '_' + o, v)
+            self.redis.rpush('OUT_' + self.name + '_' + o + '_time', current_time)
         print('=============')
 
 
