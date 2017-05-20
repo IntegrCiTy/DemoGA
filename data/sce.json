@@ -5,11 +5,11 @@
       "outputs": ["t_out_hot", "p_elec"]
     },
     "HeatPumpCooling": {
-      "inputs": ["t_in_hot", "p_cool"],
+      "inputs": ["t_in_hot", "p_cool", "t_cool"],
       "outputs": ["t_out_hot", "p_elec"]
     },
     "HeatPumpHeating": {
-      "inputs": ["t_in_cold", "p_heat"],
+      "inputs": ["t_in_cold", "p_heat", "t_heat"],
       "outputs": ["t_out_cold", "p_elec"]
     },
     "ThermalNetwork": {
@@ -22,15 +22,15 @@
     },
     "ConsumerHeating": {
       "inputs": [],
-      "outputs": ["p_heating"]
+      "outputs": ["p_heating", "t_heating"]
     },
     "ConsumerCooling": {
       "inputs": [],
-      "outputs": ["p_cooling"]
+      "outputs": ["p_cooling", "t_cooling"]
     }
   },
   "links": {
-    "l0C": {
+    "l0CP": {
       "out": {
         "node":"ConsumerCooling",
         "attr": "p_cooling"
@@ -40,7 +40,7 @@
         "attr": "p_cool"
       }
     },
-    "l0H": {
+    "l0HP": {
       "out": {
         "node":"ConsumerHeating",
         "attr": "p_heating"
@@ -48,6 +48,26 @@
       "in": {
         "node":"HeatPumpHeating",
         "attr": "p_heat"
+      }
+    },
+    "l0CT": {
+      "out": {
+        "node":"ConsumerCooling",
+        "attr": "t_cooling"
+      },
+      "in": {
+        "node":"HeatPumpCooling",
+        "attr": "t_cool"
+      }
+    },
+    "l0HT": {
+      "out": {
+        "node":"ConsumerHeating",
+        "attr": "t_heating"
+      },
+      "in": {
+        "node":"HeatPumpHeating",
+        "attr": "t_heat"
       }
     },
     "l1": {
