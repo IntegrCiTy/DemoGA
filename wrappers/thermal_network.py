@@ -23,7 +23,8 @@ if __name__ == "__main__":
                   fmu=fmu_models_folder + fmu_file,
                   map_attr=map_attr,
                   output_attributes=output_attr,
-                  input_attributes=input_attr)
+                  input_attributes=input_attr,
+                  is_first=True)
 
     print('Start thermal network node')
     net.start()
