@@ -29,7 +29,7 @@ class PowerNetwork(ClientNode):
 
 
 if __name__ == "__main__":
-    net = PowerNetwork(host='localhost',
+    net = PowerNetwork(host=sys.argv[1],
                        name='PowerNetwork',
                        input_attributes=["p_elec_hp_central", "p_elec_hp_cooling", "p_elec_hp_heating"])
 
