@@ -15,17 +15,21 @@ class HeatConsumer(ClientNode):
         print('----- ' + self.name + ' -----')
         print(self.name, 'time_step', time_step)
         print(self.name, 'current_time', current_time)
-        print(self.name, 'inputs', self.input_values)
-
-        # TODO: store simulation results
 
         # Send update for all output attributes
-        for o in self.output_attributes:
-            v = np.random.normal(100, 10)
-            print(self.name, o, ':', v)
-            self.update_attribute(o, v)
-            self.redis.rpush('OUT_' + self.name + '_' + o, v)
-            self.redis.rpush('OUT_' + self.name + '_' + o + '_time', current_time)
+        p_heating = np.random.uniform(80, 120)
+        t_heating = np.random.uniform(55, 65) + 273.15
+        print(self.name, 'p_heating', ':', p_heating)
+        print(self.name, 't_heating', ':', t_heating)
+
+        self.update_attribute('p_heating', p_heating)
+        self.update_attribute('t_heating', t_heating)
+
+        self.redis.rpush('OUT_' + self.name + '_' + 'p_heating', p_heating)
+        self.redis.rpush('OUT_' + self.name + '_' + 'p_heating' + '_time', current_time)
+
+        self.redis.rpush('OUT_' + self.name + '_' + 't_heating', t_heating)
+        self.redis.rpush('OUT_' + self.name + '_' + 't_heating' + '_time', current_time)
         print('=============')
 
 

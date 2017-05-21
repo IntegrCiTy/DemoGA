@@ -1,8 +1,19 @@
 import sys
+import json
 from common.node_fmu import NodeFMU
 
 fmu_models_folder = 'DemoGA/models_FMU/'
 fmu_file = 'hpCentral.fmu'
+param_file = '../data/par.json'
+
+with open(param_file) as json_data:
+    parameters = json.load(json_data)
+
+val_init = {
+    't_in_cold': parameters['t_lake'],
+    't_in_hot': parameters['t_set'] - 5,
+    't_set': parameters['t_set']
+}
 
 map_attr = {
     't_in_cold': 'Tin_cold',
@@ -24,6 +35,7 @@ if __name__ == "__main__":
                       name='HeatPumpCentral',
                       fmu=fmu_models_folder + fmu_file,
                       map_attr=map_attr,
+                      init_values=val_init,
                       output_attributes=output_attr,
                       input_attributes=input_attr,
                       is_first=True)

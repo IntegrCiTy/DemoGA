@@ -1,5 +1,6 @@
 import pyfmi
 import redis
+import json
 from obnl.client import ClientNode
 
 
@@ -21,7 +22,8 @@ class NodeFMU(ClientNode):
 
         if init_values:
             for key, value in init_values.items():
-                self.model.set(self.map_attr[key], value)
+                if key in map_attr:
+                    self.model.set(self.map_attr[key], value)
 
     def step(self, current_time, time_step):
         print('----- ' + self.name + ' -----')
