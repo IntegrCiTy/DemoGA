@@ -4,7 +4,7 @@ from common.node_fmu import NodeFMU
 
 fmu_models_folder = 'DemoGA/models_FMU/'
 fmu_file = 'hpCentral.fmu'
-param_file = '../data/par.json'
+param_file = 'DemoGA/data/par.json'
 
 with open(param_file) as json_data:
     parameters = json.load(json_data)
