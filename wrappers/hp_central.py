@@ -26,8 +26,8 @@ map_attr = {
     'p_heat_in': 'Pthermal_in',
     'p_heat_out': 'Pthermal_out',
     'p_elec': 'Pelectric',
-    'mflow_hs': 'flow_in_hot',
-    'mflow_cs': 'flow_in_cold'
+    'mflow_hs': 'mflow_in_hot',
+    'mflow_cs': 'mflow_in_cold'
 }
 
 input_attr = ['t_in_cold', 't_in_hot', 't_set']

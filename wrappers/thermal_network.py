@@ -28,8 +28,8 @@ map_attr = {
     't_ret': 'T0_out',
     't_sup_heat': 'Th_out',
     't_sup_cool': 'Tc_out',
-    'mflow_central': 'mflow0_in'
-    'mflow_heating': 'mflowh_in'
+    'mflow_central': 'mflow0_in',
+    'mflow_heating': 'mflowh_in',
     'mflow_cooling': 'mflowc_in'
 }
 
