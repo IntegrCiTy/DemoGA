@@ -13,7 +13,9 @@ val_init = {
     't_in_cold': parameters['t_cool_ret'],
     't_in_hot': parameters['t_set'],
     't_cool': parameters['t_cool'],
-    'p_cool': parameters['p_cooling']
+    'p_cool': parameters['p_cooling'],
+    'mflow_hs': parameters['mflow_cool'],
+    'mflow_cs': parameters['mflow_cool_src']
 }
 
 map_attr = {
@@ -23,7 +25,9 @@ map_attr = {
     't_out_hot': 'Tout_hot',
     't_cool': 'Tout_cold_target',
     'p_cool': 'Pthermal_in',
-    'p_elec': 'Pelectric'
+    'p_elec': 'Pelectric',
+    'mflow_hs': 'mflow_in_hot',
+    'mflow_cs': 'mflow_in_cold'
 }
 
 input_attr = ['t_in_cold', 't_in_hot', 't_cool', 'p_cool']

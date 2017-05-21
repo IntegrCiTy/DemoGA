@@ -1,1 +1,1 @@
-{"t_set": 295.15, "t_lake": 285.15, "t_heat": 333.15, "t_heat_ret": 313.15, "t_cool": 275.15, "t_cool_ret": 285.15, "flow_lake": 0.1, "flow_heat": 0.2, "flow_cool": 0.1, "flow_lake_src": 0.5, "p_heating": 100, "p_cooling": 100}
+{"t_set": 295.15, "t_lake": 285.15, "t_heat": 333.15, "t_heat_ret": 313.15, "t_cool": 275.15, "t_cool_ret": 285.15, "mflow_heat": 2, "mflow_heat_src": 2, "mflow_cool": 1, "mflow_cool_src": 1, "mflow_lake": 1, "mflow_lake_src": 5, "p_heating": 100, "p_cooling": 100}
