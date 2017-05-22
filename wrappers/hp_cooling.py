@@ -26,8 +26,7 @@ map_attr = {
     't_in_hot': 'Tin_hot',
     't_out_hot': 'Tout_hot',
     't_cool': 'Tout_cold_target',
-    # 'p_cool': 'Pthermal_cons',
-    'p_cool': 'Pthermal_in',
+    'p_cool': 'Pthermal_cons',
     'p_elec': 'Pelectric',
     'mflow_hs': 'mflow_in_hot',
     'mflow_cs': 'mflow_in_cold'
