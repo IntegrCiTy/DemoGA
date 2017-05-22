@@ -25,7 +25,7 @@ class HeatConsumer(ClientNode):
         # Send update for all output attributes
         # p_heating = np.random.uniform(80, 120)
         p_heating = np.mean(heat_need[current_time - time_step: current_time])        
-        t_heating = np.random.uniform(58, 62) + 273.15
+        t_heating = np.random.uniform(58, 100) + 273.15
         print(self.name, 'p_heating', ':', p_heating)
         print(self.name, 't_heating', ':', t_heating)
 
