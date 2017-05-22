@@ -22,7 +22,6 @@ val_init = {
 map_attr = {
     't_in_cold': 'Tin_cold',
     't_out_cold': 'Tout_cold',
-    't_out_cold_init': 'Tout_cold_init',
     't_in_hot': 'Tin_hot',
     't_out_hot': 'Tout_hot',
     't_cool': 'Tout_cold_target',
