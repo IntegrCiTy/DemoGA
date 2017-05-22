@@ -20,7 +20,7 @@ model hpConsumerCold
     Modelica.SIunits.Power Pthermal_in = -hp.ht.ht.Q1;
     Modelica.SIunits.Power Pthermal_out = -hp.ht.ht.Q2;
 
-    parameter Modelica.SIunits.Power Pthermal_cons = 500 "W";
+    parameter Modelica.SIunits.Power Pthermal_cons = 500000 "W";
 
     Modelica.SIunits.Temperature Tout_cold = hp.ht.ht.staB1.T;
     Modelica.SIunits.Temperature Tout_hot = hp.ht.ht.staB2.T;
