@@ -4,7 +4,7 @@ import redis
 from obnl.client import ClientNode
 import numpy as np
 
-cool_base = np.array([5, 5, 15, 30, 50, 10, 5])
+cool_base = np.array([5, 5, 15, 30, 50, 10, 5]) * 1000
 cool_need = np.array([])
 for i in range(1, len(cool_base)):
     pro = np.linspace(cool_base[i-1], cool_base[i], num=14400, endpoint=False)
