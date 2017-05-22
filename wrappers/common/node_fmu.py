@@ -23,6 +23,7 @@ class NodeFMU(ClientNode):
         if init_values:
             for key, value in init_values.items():
                 if key in map_attr:
+                    print('INIT', key, value)
                     self.model.set(self.map_attr[key], value)
 
     def step(self, current_time, time_step):
