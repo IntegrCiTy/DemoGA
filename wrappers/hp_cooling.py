@@ -11,6 +11,7 @@ with open(param_file) as json_data:
 
 val_init = {
     't_in_cold': parameters['t_cool_ret'],
+    't_out_cold_init': parameters['t_cool_ret'],
     't_in_hot': parameters['t_set'],
     't_cool': parameters['t_cool'],
     'p_cool': parameters['p_cooling'],
@@ -21,10 +22,11 @@ val_init = {
 map_attr = {
     't_in_cold': 'Tin_cold',
     't_out_cold': 'Tout_cold',
+    't_out_cold_init': 'Tout_cold_init',
     't_in_hot': 'Tin_hot',
     't_out_hot': 'Tout_hot',
     't_cool': 'Tout_cold_target',
-    'p_cool': 'Pthermal_in',
+    'p_cool': 'Pthermal_cons',
     'p_elec': 'Pelectric',
     'mflow_hs': 'mflow_in_hot',
     'mflow_cs': 'mflow_in_cold'
