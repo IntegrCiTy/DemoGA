@@ -17,8 +17,8 @@ class CoolConsumer(ClientNode):
         print(self.name, 'current_time', current_time)
 
         # Send update for all output attributes
-        p_cooling = np.random.uniform(30, 70)
-        t_cooling = np.random.uniform(1, 3) + 273.15
+        p_cooling = np.random.uniform(10, 50)
+        t_cooling = np.random.uniform(1, 5) + 273.15
         print(self.name, 'p_cooling', ':', p_cooling)
         print(self.name, 't_cooling', ':', t_cooling)
 
