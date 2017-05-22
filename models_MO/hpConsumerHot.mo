@@ -1,8 +1,6 @@
 within DHS.csBlocks;
 model hpConsumerHot
 
-  
-
     //////////////
 
     parameter Real eta=0.4;
@@ -10,19 +8,19 @@ model hpConsumerHot
 
 
     parameter Modelica.SIunits.Temperature Tin_cold=273+20 "K";
-    parameter Modelica.SIunits.MassFlowRate mflow_in_cold=8 "kg/s";
 
+    parameter Modelica.SIunits.MassFlowRate mflow_in_cold=8 "kg/s";
     parameter Modelica.SIunits.MassFlowRate mflow_in_hot=8 "kg/s";
 
     parameter Modelica.SIunits.Temperature Tout_hot_target=273+50 "K";
 
-    parameter Modelica.SIunits.Temperature Tout_hot_init=273+20 "K";
+    Modelica.SIunits.Temperature Tout_hot_init=Tout_hot_target "K";
 
     Modelica.SIunits.Power Pelectric = hp.ht.ht.P;
     Modelica.SIunits.Power Pthermal_in = hp.ht.ht.Q2;
     Modelica.SIunits.Power Pthermal_out = hp.ht.ht.Q1;
 
-    Modelica.SIunits.Power Pthermal_cons = 1E5 "W";
+    parameter Modelica.SIunits.Power Pthermal_cons = 50000 "W";
 
     Modelica.SIunits.Temperature Tout_cold = hp.ht.ht.staB2.T;
     Modelica.SIunits.Temperature Tout_hot = hp.ht.ht.staB1.T;

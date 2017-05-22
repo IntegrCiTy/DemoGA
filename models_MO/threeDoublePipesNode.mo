@@ -1,10 +1,7 @@
 within DHS.csBlocks;
 model threeDoublePipesNode
 
-  
-
     //////////////
-
 
     parameter Modelica.SIunits.Temperature T0_in=273+30 "K";
     parameter Modelica.SIunits.Temperature Th_in=273+15 "K";
@@ -17,10 +14,10 @@ model threeDoublePipesNode
     parameter Modelica.SIunits.Length length_pipes_0 = 100 "m";
     parameter Modelica.SIunits.Length diameter_pipes_0 = 0.2 "m";
 
-    parameter Modelica.SIunits.Length length_pipes_h = 50 "m";
+    parameter Modelica.SIunits.Length length_pipes_h = 100 "m";
     parameter Modelica.SIunits.Length diameter_pipes_h = 0.2 "m";
 
-    parameter Modelica.SIunits.Length length_pipes_c = 70 "m";
+    parameter Modelica.SIunits.Length length_pipes_c = 100 "m";
     parameter Modelica.SIunits.Length diameter_pipes_c = 0.2 "m";
 
     Modelica.SIunits.Temperature T0_out= sta0_out.T;

@@ -14,13 +14,13 @@ model hpConsumerCold
 
     parameter Modelica.SIunits.Temperature Tout_cold_target=273+2 "K";
 
-    parameter Modelica.SIunits.Temperature Tout_cold_init=273+20 "K";
+    Modelica.SIunits.Temperature Tout_cold_init=Tout_cold_target "K";
 
     Modelica.SIunits.Power Pelectric = hp.ht.ht.P;
     Modelica.SIunits.Power Pthermal_in = -hp.ht.ht.Q1;
     Modelica.SIunits.Power Pthermal_out = -hp.ht.ht.Q2;
 
-    Modelica.SIunits.Power Pthermal_cons = 1E5 "W";
+    parameter Modelica.SIunits.Power Pthermal_cons = 500 "W";
 
     Modelica.SIunits.Temperature Tout_cold = hp.ht.ht.staB1.T;
     Modelica.SIunits.Temperature Tout_hot = hp.ht.ht.staB2.T;
