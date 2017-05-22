@@ -13,8 +13,8 @@ param = {
     "mflow_cool_src": 2,            # [kg/s]
     "mflow_lake": 2,                # [kg/s]
     "mflow_lake_src": 7,            # [kg/s]
-    "p_heating": 100,				# [kW]
-    "p_cooling": 100				# [kW]
+    "p_heating": 75,				# [kW]
+    "p_cooling": 10				    # [kW]
 }
 
 with open('par.json', 'w') as outfile:
