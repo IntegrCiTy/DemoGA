@@ -20,9 +20,9 @@ model threeDoublePipesNode
     parameter Modelica.SIunits.Length length_pipes_c = 100 "m";
     parameter Modelica.SIunits.Length diameter_pipes_c = 0.2 "m";
 
-    Modelica.SIunits.Temperature T0_out= sta0_out.T;
-    Modelica.SIunits.Temperature Th_out= stah_out.T;
-    Modelica.SIunits.Temperature Tc_out= stac_out.T;
+    parameter Modelica.SIunits.Temperature T0_out= sta0_out.T;
+    parameter Modelica.SIunits.Temperature Th_out= stah_out.T;
+    parameter Modelica.SIunits.Temperature Tc_out= stac_out.T;
 
 protected
 
