@@ -4,7 +4,8 @@ import redis
 from obnl.client import ClientNode
 import numpy as np
 
-heat_base = np.array([75, 100, 75, 50, 50, 75, 75]) * 1000
+# heat_base = np.array([75, 100, 75, 50, 50, 75, 75]) * 1000
+heat_base = np.array([75, 100, 75, 50, 50, 75, 75, 100, 75, 50, 50, 75, 75]) * 1000
 heat_need = np.array([])
 for i in range(1, len(heat_base)):
     pro = np.linspace(heat_base[i-1], heat_base[i], num=14400, endpoint=False)
@@ -22,11 +23,9 @@ class HeatConsumer(ClientNode):
         print(self.name, 'time_step', time_step)
         print(self.name, 'current_time', current_time)
 
-        # Send update for all output attributes
-        # p_heating = np.random.uniform(80, 120)
         p_heating = np.mean(heat_need[current_time - time_step: current_time])        
-        # t_heating = np.random.uniform(58, 100) + 273.15
         t_heating = 60 + 273.15
+
         print(self.name, 'p_heating', ':', p_heating)
         print(self.name, 't_heating', ':', t_heating)
 

@@ -20,8 +20,8 @@ param = {
 with open('par.json', 'w') as outfile:
     json.dump(param, outfile)
 
-step = 60
-nbr_step = 60*24
+step = 30
+nbr_step = int(60*24*2*2)
 
 data = {"schedule":
             [["HeatPumpCooling", "HeatPumpHeating", "HeatPumpCentral"],
